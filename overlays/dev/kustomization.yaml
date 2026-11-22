@@ -1,9 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
+namespace: dev            # puts every resource into the dev namespace
+
 resources:
-  - postgres/statefulset.yaml
-  - postgres/service.yaml
-  - auth-service/configmap.yaml
-  - auth-service/deployment.yaml
-  - auth-service/service.yaml
-  - auth-service/ingress.yaml
+  - namespace.yaml
+  - ../../base
+
+# CHANGE: your Docker Hub username and image tag
+images:
+  - name: auth-service
+    newName: manojgk1089/auth-service
+    newTag: "v1.12"
+
+replicas:
+  - name: auth-service
+    count: 2
