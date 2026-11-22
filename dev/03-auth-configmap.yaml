@@ -1,0 +1,10 @@
+# Non-secret settings for auth-service (names match application.yml)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-config
+  namespace: dev
+data:
+  DB_URL: "jdbc:postgresql://postgres:5432/authdb"
+  DB_USERNAME: "authuser"
+  JWT_EXPIRATION: "3600000"
