@@ -12,7 +12,3 @@ images:
   - name: auth-service
     newName: manojgk1089/auth-service
     newTag: "v1.12"
-
-replicas:
-  - name: auth-service
-    count: 2
