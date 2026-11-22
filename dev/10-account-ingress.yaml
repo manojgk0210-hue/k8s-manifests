@@ -1,0 +1,19 @@
+# Separate Ingress for /api/accounts; both Ingresses share the same NGINX load balancer.
+# If auth-ingress has "host: api.manojk.in", add the same host line here.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: account-ingress
+  namespace: dev
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /api/accounts
+            pathType: Prefix
+            backend:
+              service:
+                name: account-service
+                port:
+                  number: 80
