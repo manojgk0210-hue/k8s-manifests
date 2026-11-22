@@ -18,7 +18,7 @@ spec:
       containers:
         - name: auth-service
           # CHANGE: your Docker Hub username and tag
-          image: YOUR_DOCKERHUB_USERNAME/auth-service:1.1
+          image: manojgk1089/auth-service:1.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
