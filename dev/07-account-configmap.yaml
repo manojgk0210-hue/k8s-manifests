@@ -1,9 +1,0 @@
-# Non-secret settings for account-service (names match its application.yml)
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: account-config
-  namespace: dev
-data:
-  DB_URL: "jdbc:postgresql://postgres:5432/accountdb"
-  DB_USERNAME: "accountuser"
